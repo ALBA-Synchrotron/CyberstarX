@@ -50,11 +50,7 @@ class CyberstarBaseChannel:
 
     @sca_high.setter
     def sca_high(self, value):
-        max_sca = Specs.max_sca(self.model)
-        if value > max_sca:
-            err_msg = 'SCA High must be lower than {}'.format(max_sca)
-            raise ValueError(err_msg)
-
+        Specs.check_sca(self.model, value)
         cmd = ':SENS{}:SCA:UPP{} {}'.format(self._parent.addr, self._id, value)
         self._parent.send_cmd(cmd)
 
@@ -66,11 +62,7 @@ class CyberstarBaseChannel:
 
     @sca_low.setter
     def sca_low(self, value):
-        min_sca = 0
-        if value < min_sca:
-            err_msg = 'SCA Low must be grader than'.format(min_sca)
-            raise ValueError(err_msg)
-
+        Specs.check_sca(self.model, value)
         cmd = ':SENS{}:SCA:LOW{} {}'.format(self._parent.addr, self._id, value)
         self._parent.send_cmd(cmd)
 

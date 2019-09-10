@@ -27,8 +27,11 @@ class Specs:
                              '{}'.format(repr(peaking_time)))
 
     @staticmethod
-    def max_sca(model):
-        return Specs._specs[model][2]
+    def check_sca(model, value):
+        max_sca = Specs._specs[model][2]
+        if value < 0 or value > max_sca:
+            err_msg = 'Allowed SCA from 0 to {}'.format(max_sca)
+            raise ValueError(err_msg)
 
     @staticmethod
     def check_voltage(model, value):
