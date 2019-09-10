@@ -36,4 +36,3 @@ class CyberstarComm:
         self._send(cmd)
         time.sleep(self.wait_time)
         return self._read()
-

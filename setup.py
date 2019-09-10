@@ -36,7 +36,7 @@ setup(
     include_package_data=True,
     license="GPLv3",
     long_description="""
-    Python CyberstartX Oxford Danfysik Fast Scintillation Detector and 
+    Python CyberstartX Oxford Danfysik Fast Scintillation Detector and
     Pulse Processing Unit Extension for Win32, Linux, BSD, Jython
     """,
     classifiers=[
