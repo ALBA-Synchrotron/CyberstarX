@@ -124,4 +124,3 @@ class CyberstarX2000(CyberstarBaseChannel):
         else:
             raise RuntimeError('Wrong answer from HW {}'.format(value))
         return value
-

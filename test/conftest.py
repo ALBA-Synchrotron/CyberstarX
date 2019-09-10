@@ -5,6 +5,7 @@ import serial
 
 from patch_serial import patch_serial
 
+
 @pytest.fixture
 def cyber_mock():
     """Test the mockup"""
