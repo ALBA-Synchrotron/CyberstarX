@@ -16,11 +16,11 @@ def test_controller(cyber_controller):
         channel.peaking_time = 200
     channel.sca_high = 3.5
     assert channel.sca_high == 3.5
-    with pytest.raises(ValueError):
-        channel.sca_low = 3.6
     channel.sca_low = 2.2
     assert channel.sca_low == 2.2
     if cyber_controller.model == Models.X2000:
+        with pytest.raises(ValueError):
+            channel.sca_low = 5
         assert channel.saturation is True
         channel.peaking_time = 50
         assert channel.peaking_time == 50
