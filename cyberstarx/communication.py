@@ -28,7 +28,8 @@ class CyberstarComm:
         ans = ans.decode(self.CODING)
         ans = ans.strip()
         if '\x06' not in ans:
-            raise RuntimeError('HW did not set acknowledged')
+            raise RuntimeError('HW did not send acknowledged. '
+                               'Restart it and check the connection')
         ans = ans.replace('\x06', '')
         return ans
 
