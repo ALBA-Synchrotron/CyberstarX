@@ -5,4 +5,4 @@ from .controller import CyberstarController
 
 # The version is updated automatically with bumpversion
 # Do not update manually
-version = '0.1.2'
+version = '0.1.3'
