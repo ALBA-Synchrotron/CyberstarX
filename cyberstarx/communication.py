@@ -9,10 +9,10 @@ class CyberstarComm:
     def __init__(self, port, wait_time=0):
         log_name = '{}.CyberstarComm'.format(__name__)
         self.log = logging.getLogger(log_name)
-        self._com = serial.Serial(port,
-                                  baudrate=9600,
-                                  parity=serial.PARITY_NONE,
-                                  stopbits=1)
+        self._com = serial.serial_for_url(port,
+                                          baudrate=9600,
+                                          parity=serial.PARITY_NONE,
+                                          stopbits=1)
         self._com.timeout = 0
         self.wait_time = wait_time
 
